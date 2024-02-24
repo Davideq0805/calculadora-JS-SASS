@@ -1,0 +1,135 @@
+/* Estilos de reinicio para asegurar consistencia en los estilos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Estilo del fondo del cuerpo con un degradado lineal */
+body {
+    background: linear-gradient(45deg, #62f0e4, #fffde7);
+}
+
+/* Contenedor principal centrado y con capacidad de envoltura de elementos flexibles */
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos del contenedor de la calculadora */
+.calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgb(187, 130, 130);
+    background-color: #fff;
+
+    /* Estilos específicos para el display */
+    #display {
+        color: #333;
+        margin: 0 10px;
+        height: 120px;
+        width: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        font-size: 40px;
+        margin-bottom: 20px;
+        font-weight: 800;
+    }
+
+    /* Estilos para el botón igual */
+    #equal {
+        height: 130px;
+    }
+
+    /* Estilos para el botón de limpiar */
+    #clear {
+        background-color: #ffd5d8;
+        color: #fc4552;
+    }
+
+    /* Estilos para botones numéricos */
+    .btn-number {
+        background-color: #c3eaff;
+        color: black;
+    }
+
+    /* Estilos para botones de operadores */
+    .btn-operator {
+        background-color: #ffd0fb;
+        color: #f967f3;
+    }
+
+    /* Estilos para el botón igual */
+    .btn-equal {
+        background-color: #adf9e7;
+        color: black;
+    }
+
+    /* Estilos oscuros */
+    &.dark {
+        background-color: #333;
+        /* Estilos específicos para el display en modo oscuro */
+        #display {
+            color: #f8f8f8;
+        }
+    }
+}
+
+/* Estilos para el botón de cambio de tema */
+.theme-toggler {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: #333;
+    cursor: pointer;
+    z-index: 1;
+    /* Estilos del círculo detrás del icono */
+    &::before {
+        content: '';
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: white;
+        z-index: -1;
+    }
+}
+
+/* Estilos para el botón de cambio de tema cuando está activo */
+.theme-toggler .active {
+    color: #333;
+    &::before {
+        background-color: #333;
+    }
+}
+
+/* Estilos generales para botones */
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+
+    /* Transición para efectos suaves durante el cambio de estilo */
+    transition: all 200ms ease;
+
+    /* Efecto de escala al pasar el ratón sobre el botón */
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
